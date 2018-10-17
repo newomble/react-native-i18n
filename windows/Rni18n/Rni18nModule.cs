@@ -1,5 +1,6 @@
 using ReactNative.Bridge;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Core;
@@ -41,9 +42,9 @@ namespace Rni18n.Rni18n
             }
         }
 
-        private ArrayList GetLocaleList()
+        private IList GetLocaleList()
         {
-            var returnList = new ArrayList();
+            var returnList = new List<string>();
             var langList = Windows.System.UserProfile.GlobalizationPreferences.Languages;
             var langListEnum = langList.GetEnumerator();
             while (langListEnum.MoveNext())
