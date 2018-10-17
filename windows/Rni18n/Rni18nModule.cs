@@ -30,6 +30,17 @@ namespace Rni18n.Rni18n
             }
         }
 
+        public override IReadOnlyDictionary<string, object> Constants
+        {
+            get
+            {
+                return new Dictionary<string, object>
+                {
+                    { "languages", this.GetLocaleList() }
+                };
+            }
+        }
+
         private ArrayList GetLocaleList()
         {
             var returnList = new ArrayList();
